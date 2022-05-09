@@ -11,21 +11,34 @@ let students =[
         userName:"Habeeb",
         passWord:"ha2187"
     },
-]
+];
+let value = 0;
+let result = 0;
+var validateStudent = () =>{
+    for ( i=0; i<Infinity; i++) {
+        
+        var username =prompt("Enter studentName");
+        var id = prompt("Enter validId");
 
-const userN = "Halimah"
-const psw = 'hal187'
+        for(k=0;  k<students.length; k++){
+            if(username ===students[k].userName && id === students[k].passWord){
+                value ++;
+                result = students[k]
+            }
+          
+        }
+        if(value > 0){
+            console.log(result)
+        }else{
+            console.log("Invalid credentials")
+        }
 
-
-
-if(userN && psw){
-    const main = students.find((user) => user.userName === userN )
-    if(main.passWord === psw){
-        console.log(`${main.userName} has logged in`)
-    }else{
-        console.log('password is not correct')
+        var userExist = prompt("Enter N to exist or quit");
+        if(userExist === 'n' || userExist==='N'){
+            break;
+        }else{
+            continue;
+        }
     }
-  
-}else{
-   console.log('no userName or Password')
 }
+validateStudent();
